@@ -6,7 +6,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPasswor
 document.addEventListener("DOMContentLoaded", () => {
   // Configuração do Firebase
   const firebaseConfig = {
-    apiKey: "AlTzaSyAvffw23q6XvrWUlChp76rrTytjgMXpL3VE",
+    apiKey: "AIzaSyAvffw23qX6rWU1cHp76rrTytgjMXpl3VE",
     authDomain: "doceria-encantada.firebaseapp.com",
     projectId: "doceria-encantada",
     storageBucket: "doceria-encantada.appspot.com",
