@@ -10,20 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
     measurementId: "G-K15XINXBE9" // opcional, usado para Analytics
   };
 
-  // Inicializa Firebase
+  // Inicializa Firebase (modular)
   const app = firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
+  const auth = firebase.getAuth(app);
 
   // Login com Google
-  const providerGoogle = new firebase.auth.GoogleAuthProvider();
+  const providerGoogle = new firebase.GoogleAuthProvider();
   const btnGoogle = document.getElementById("btnGoogle");
   if (btnGoogle) {
     btnGoogle.addEventListener("click", () => {
-      auth.signInWithPopup(providerGoogle).then(result => {
-        alert("Logado como: " + result.user.displayName);
-      }).catch(error => {
-        console.error("Erro no login Google:", error);
-      });
+      firebase.signInWithPopup(auth, providerGoogle)
+        .then(result => {
+          alert("Logado como: " + result.user.displayName);
+        })
+        .catch(error => {
+          console.error("Erro no login Google:", error);
+        });
     });
   }
 
@@ -33,9 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
     btnEmail.addEventListener("click", () => {
       const email = prompt("Digite seu email:");
       const senha = prompt("Digite sua senha:");
-      auth.signInWithEmailAndPassword(email, senha)
+      firebase.signInWithEmailAndPassword(auth, email, senha)
         .then(result => alert("Logado como: " + result.user.email))
-        .catch(error => console.error("Erro no login Email:", error));
+        .catch(error => {
+          console.error("Erro no login Email:", error);
+        });
     });
   }
 });
