@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => {
           console.error("Erro no login Google:", error);
+          alert("Erro no login Google: " + error.message);
         });
     });
   }
@@ -36,9 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = prompt("Digite seu email:");
       const senha = prompt("Digite sua senha:");
       firebase.signInWithEmailAndPassword(auth, email, senha)
-        .then(result => alert("Logado como: " + result.user.email))
+        .then(result => {
+          alert("Logado como: " + result.user.email);
+        })
         .catch(error => {
           console.error("Erro no login Email:", error);
+          alert("Erro no login Email: " + error.message);
         });
     });
   }
