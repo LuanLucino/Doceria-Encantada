@@ -4,7 +4,6 @@ import { getAuth, createUserWithEmailAndPassword }
   from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Configuração do Firebase
   const firebaseConfig = {
     apiKey: "AlTzaSyAvffw23q6XvrWUlChp76rrTytjgMXpL3VE",
     authDomain: "doceria-encantada.firebaseapp.com",
@@ -18,15 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  // Botão de cadastro
-  const btnSignup = document.getElementById("btnSignup");
-  if (btnSignup) {
-    btnSignup.addEventListener("click", () => {
-      const email = prompt("Digite seu email para cadastro:");
-      const senha = prompt("Digite sua senha (mínimo 6 caracteres):");
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault(); // evita recarregar a página
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
       createUserWithEmailAndPassword(auth, email, senha)
         .then(result => {
           alert("Usuário criado com sucesso: " + result.user.email);
+          // Redireciona para login.html
+          window.location.href = "login.html";
         })
         .catch(error => {
           console.error("Erro no cadastro:", error);

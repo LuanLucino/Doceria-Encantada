@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar - Doceria Encantada</title>
+  <link rel="stylesheet" href="css/style-login.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h1>🍩 Doceria Encantada 🍰</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="carrinho.html">Carrinho 🛒</a></li>
+        <li><a href="login.html">Login 🔑</a></li>
+        <li><a href="signup.html">Cadastrar ✨</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="login-container">
+      <h2>Cadastro de Usuário</h2>
+      <form id="signupForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" required minlength="6">
+
+        <button type="submit" class="btn-fofo">Cadastrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Doceria Encantada - Feito com amor 💕</p>
+    <p>Desenvolvido por <a href="https://luanlucino.github.io/Portfolio/" target="_blank">Luan Lucino</a></p>
+  </footer>
+
+  <!-- JS separado como módulo -->
+  <script type="module" src="js/signup.js"></script>
+</body>
+</html>
