@@ -1,0 +1,353 @@
+/* ===== Estilo geral ===== */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #ffe6f2;
+  margin: 0;
+  padding: 0;
+  color: #5c3d57;
+}
+
+header {
+  background-color: #ffcce0;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #a64d79;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #5c3d57;
+  font-weight: bold;
+}
+
+/* ===== Cardápio ===== */
+.cardapio {
+  padding: 40px;
+  text-align: center;
+}
+
+.cardapio h2 {
+  color: #a64d79;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+/* ===== Container centralizado ===== */
+.conteudo-cardapio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Abas ===== */
+.abas {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.aba {
+  background-color: #ff99cc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.aba:hover {
+  background-color: #ff66b2;
+  transform: scale(1.05);
+}
+
+.aba.ativa {
+  background-color: #a64d79;
+}
+
+/* ===== Filtro Mobile ===== */
+.filtro-mobile {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#btn-filtro {
+  background-color: #ff99cc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.menu-filtro {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.menu-filtro button {
+  background-color: #ffcce0;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 15px;
+  color: #5c3d57;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-filtro button:hover {
+  background-color: #ff99cc;
+  color: white;
+}
+
+/* ===== Categorias ===== */
+.categoria {
+  display: none;
+}
+
+.categoria.ativa {
+  display: block;
+  animation: fadeIn 1s ease;
+}
+
+.categoria h3 {
+  color: #a64d79;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+/* ===== Grid de itens ===== */
+.grid-cardapio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ===== Item do cardápio ===== */
+.item {
+  background-color: #fff0f6;
+  border: 2px solid #ff99cc;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item h4 {
+  margin: 0 0 10px;
+  color: #a64d79;
+}
+
+.item p {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+.preco {
+  display: block;
+  font-weight: bold;
+  color: #5c3d57;
+  margin-bottom: 10px;
+}
+
+/* ===== Contador de quantidade ===== */
+.quantidade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.quantidade button {
+  background-color: #ff99cc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantidade button:hover {
+  background-color: #ff66b2;
+}
+
+.quantidade .valor {
+  margin: 0 10px;
+  font-weight: bold;
+  color: #5c3d57;
+}
+
+/* ===== Botão de adicionar ao carrinho ===== */
+.btn-carrinho {
+  display: inline-block;
+  background-color: #a64d79;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-carrinho:hover {
+  background-color: #ff66b2;
+  transform: scale(1.05);
+}
+
+/* ===== Hover no item ===== */
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 102, 178, 0.3);
+}
+
+/* ===== Rodapé ===== */
+footer {
+  background-color: #ffcce0;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 5px 0;
+  color: #5c3d57;
+  font-size: 0.95em;
+}
+
+footer a {
+  color: #a64d79;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #ff66b2;
+  text-decoration: underline;
+}
+
+/* ===== Animações ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+
+  .cardapio {
+    padding: 20px;
+  }
+
+  .cardapio h2 {
+    font-size: 1.6em;
+  }
+
+  .abas {
+    display: none;
+  }
+  .filtro-mobile {
+    display: block;
+  }
+
+  .grid-cardapio {
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    padding: 15px;
+  }
+
+  .item h4 {
+    font-size: 1.1em;
+  }
+
+  .item p {
+    font-size: 0.9em;
+  }
+
+  .preco {
+    font-size: 1em;
+  }
+
+  .btn-carrinho {
+    margin: 0 auto;
+    display: block;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 0.95em;
+  }
+
+  footer {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  #btn-filtro {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+
+  .menu-filtro button {
+    font-size: 0.85em;
+    padding: 8px;
+  }
+
+  .item h4 {
+    font-size: 1em;
+  }
+
+  .item p {
+    font-size: 0.85em;
+  }
+
+  .preco {
+    font-size: 0.9em;
+  }
+
+  .btn-carrinho {
+    font-size: 0.9em;
+  }
+}

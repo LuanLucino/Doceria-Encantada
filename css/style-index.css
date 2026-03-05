@@ -1,0 +1,233 @@
+/* ===== Estilo geral ===== */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #fff0f6;
+  margin: 0;
+  padding: 0;
+  color: #5c3d57;
+}
+
+header {
+  background-color: #ffcce0;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #a64d79;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #5c3d57;
+  font-weight: bold;
+}
+
+/* ===== Margem imaginária (container centralizado) ===== */
+.conteudo-inicio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* cria a margem lateral */
+}
+
+/* ===== Banner ===== */
+.banner {
+  background-color: #ffe6f2;
+  padding: 40px;
+  text-align: center;
+  font-size: 1.5em;
+  color: #a64d79;
+  font-weight: bold;
+  animation: fadeIn 1.5s ease;
+}
+
+/* ===== Sobre nós ===== */
+.sobre {
+  padding: 40px;
+  text-align: center;
+  color: #5c3d57;
+}
+
+.sobre h2 {
+  color: #a64d79;
+  margin-bottom: 20px;
+}
+
+/* ===== Destaques ===== */
+.destaques {
+  background-color: #fff0f6;
+  padding: 40px;
+  text-align: center;
+}
+
+.destaques h2 {
+  color: #a64d79;
+  margin-bottom: 20px;
+}
+
+.grid-destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.destaque-item {
+  background-color: #ffcce0;
+  border-radius: 15px;
+  padding: 20px;
+  font-weight: bold;
+  color: #5c3d57;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.destaque-item:hover {
+  transform: scale(1.05);
+  background-color: #ff99cc;
+  color: white;
+}
+
+/* ===== Depoimentos ===== */
+.depoimentos {
+  padding: 40px;
+  text-align: center;
+  color: #5c3d57;
+}
+
+.depoimentos h2 {
+  color: #a64d79;
+  margin-bottom: 30px;
+}
+
+.grid-depoimentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.depoimento-item {
+  background-color: #fff0f6;
+  border: 2px solid #ff99cc;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(255, 153, 204, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.depoimento-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 102, 178, 0.3);
+}
+
+.depoimento-item p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.depoimento-item h4 {
+  margin: 0;
+  color: #a64d79;
+  font-weight: bold;
+}
+
+.icone {
+  font-size: 1.5em;
+  color: #ff66b2;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.btn-fofo.ativo {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+
+/* ===== Rodapé ===== */
+footer {
+  background-color: #ffcce0;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 5px 0;
+  color: #5c3d57;
+  font-size: 0.95em;
+}
+
+footer a {
+  color: #a64d79;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #ff66b2;
+  text-decoration: underline;
+}
+
+/* ===== Animações ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+
+  .banner {
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  .grid-destaques {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-depoimentos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  .banner {
+    font-size: 0.9em;
+    padding: 15px;
+  }
+
+  .grid-destaques {
+    grid-template-columns: 1fr;
+  }
+}

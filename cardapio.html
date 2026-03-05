@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doceria Encantada - Cardápio</title>
+  <link rel="stylesheet" href="css/style-cardapio.css">
+</head>
+<body>
+  <header>
+    <h1>🍩 Doceria Encantada 🍰</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="carrinho.html">Carrinho 🛒</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cardapio">
+      <h2>Nosso Cardápio</h2>
+
+      <!-- Abas (desktop) -->
+      <div class="abas">
+        <button class="aba ativa" data-categoria="todos">Todos</button>
+        <button class="aba" data-categoria="cupcakes">Cupcakes</button>
+        <button class="aba" data-categoria="doces">Doces Tradicionais</button>
+        <button class="aba" data-categoria="tortas">Tortas</button>
+        <button class="aba" data-categoria="bebidas">Bebidas</button>
+      </div>
+
+      <!-- Filtro Mobile -->
+      <div class="filtro-mobile">
+        <button id="btn-filtro">☰ Filtros</button>
+        <div id="menu-filtro" class="menu-filtro">
+          <button data-categoria="todos">Todos</button>
+          <button data-categoria="cupcakes">Cupcakes</button>
+          <button data-categoria="doces">Doces Tradicionais</button>
+          <button data-categoria="tortas">Tortas</button>
+          <button data-categoria="bebidas">Bebidas</button>
+        </div>
+      </div>
+
+      <!-- Conteúdo -->
+      <div class="conteudo-cardapio">
+        <!-- TODOS -->
+        <div class="categoria ativa" id="todos">
+          <div class="grid-cardapio">
+            <!-- Exemplo de item -->
+            <div class="item">
+              <h4>Cupcake de Morango</h4>
+              <p>Massa fofinha com chantilly e morangos frescos.</p>
+              <span class="preco">R$ 8,00</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Cupcake de Morango" data-preco="8">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+
+            <div class="item">
+              <h4>Cupcake de Chocolate</h4>
+              <p>Recheado com brigadeiro e cobertura cremosa.</p>
+              <span class="preco">R$ 9,00</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Cupcake de Chocolate" data-preco="9">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+
+            <div class="item">
+              <h4>Brigadeiro Gourmet</h4>
+              <p>Feito com chocolate belga, derrete na boca.</p>
+              <span class="preco">R$ 3,50</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Brigadeiro Gourmet" data-preco="3.5">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+
+            <div class="item">
+              <h4>Mini Churros</h4>
+              <p>Recheados com doce de leite e polvilhados com açúcar e canela.</p>
+              <span class="preco">R$ 5,00</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Mini Churros" data-preco="5">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+
+            <div class="item">
+              <h4>Torta de Limão</h4>
+              <p>Base crocante, recheio cremoso e cobertura de merengue.</p>
+              <span class="preco">R$ 25,00</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Torta de Limão" data-preco="25">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+
+            <div class="item">
+              <h4>Torta de Maçã</h4>
+              <p>Clássica, com maçãs caramelizadas e toque de canela.</p>
+              <span class="preco">R$ 28,00</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Torta de Maçã" data-preco="28">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+
+            <div class="item">
+              <h4>Chocolate Quente</h4>
+              <p>Cremoso e quentinho, perfeito para acompanhar os doces.</p>
+              <span class="preco">R$ 10,00</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Chocolate Quente" data-preco="10">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+
+            <div class="item">
+              <h4>Milkshake de Morango</h4>
+              <p>Refrescante e doce, feito com sorvete artesanal.</p>
+              <span class="preco">R$ 12,00</span>
+              <div class="quantidade">
+                <button class="btn-menos">-</button>
+                <span class="valor">1</span>
+                <button class="btn-mais">+</button>
+              </div>
+              <button class="btn-carrinho" data-nome="Milkshake de Morango" data-preco="12">
+                Adicionar ao Carrinho
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Doceria Encantada - Feito com amor 💕</p>
+    <p>Desenvolvido por <a href="https://luanlucino.github.io/Portfolio/" target="_blank">Luan Lucino</a></p>
+  </footer>
+
+  <!-- JS exclusivo do cardápio -->
+  <script src="js/script-cardapio.js"></script>
+</body>
+</html>
