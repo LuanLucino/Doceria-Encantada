@@ -1,4 +1,6 @@
-/* ===== Estilo geral ===== */
+/* ===========================
+   Estilo Geral
+=========================== */
 body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   background-color: #ffe6f2;
@@ -35,8 +37,9 @@ nav ul li a {
   font-weight: bold;
 }
 
-/* ===== Cardápio ===== */
-
+/* ===========================
+   Cardápio
+=========================== */
 .cardapio {
   padding: 40px;
   text-align: center;
@@ -48,16 +51,18 @@ nav ul li a {
   font-size: 2em;
 }
 
-/* ===== Container centralizado ===== */
-
+/* ===========================
+   Container Centralizado
+=========================== */
 .conteudo-cardapio {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ===== Abas ===== */
-
+/* ===========================
+   Abas
+=========================== */
 .abas {
   display: flex;
   justify-content: center;
@@ -86,85 +91,76 @@ nav ul li a {
   background-color: #a64d79;
 }
 
-/* ===== Filtro Mobile ===== */
-
-.filtro-mobile{
-  display:none;
+/* ===========================
+   Filtro Mobile
+=========================== */
+.filtro-mobile {
+  display: none;
 }
 
-.menu-filtro{
-  display:none;
-  flex-direction:column;
-  gap:10px;
-  margin-top:10px;
+.menu-filtro {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-/* ===== MOBILE ===== */
-
-@media (max-width:768px){
-
-  .abas{
-    display:none;
+/* ===========================
+   Mobile
+=========================== */
+@media (max-width: 768px) {
+  .abas {
+    display: none;
   }
 
-  .filtro-mobile{
-    display:block;
-    text-align:center;
-    margin-bottom:25px;
+  .filtro-mobile {
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
   }
 
-  #btn-filtro{
-    background:#a64d79;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:25px;
-    font-weight:bold;
-    cursor:pointer;
-    font-size:16px;
+  #btn-filtro {
+    background: #a64d79;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
   }
 
-  .menu-filtro button{
-    background:#ffcce0;
-    border:none;
-    padding:10px;
-    border-radius:20px;
-    font-weight:bold;
-    cursor:pointer;
+  .menu-filtro button {
+    background: #ffcce0;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
   }
-
 }
 
-
-
-/* ===== GRID RESPONSIVO DO CARDÁPIO ===== */
-
+/* ===========================
+   Grid Responsivo do Cardápio
+=========================== */
 .grid-cardapio {
   display: grid;
-
-  /* largura fixa dos cards */
   grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
-
-  /* espaçamento entre os cards */
   gap: 60px;
-
-  /* centralização */
   justify-content: center;
-
   margin-top: 20px;
 }
 
-/* ===== Item do cardápio ===== */
-
+/* ===========================
+   Item do Cardápio
+=========================== */
 .item {
   background-color: #fff0f6;
   border: 2px solid #ff99cc;
   border-radius: 15px;
   padding: 20px;
   text-align: center;
-
   width: 240px;
-
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -185,8 +181,9 @@ nav ul li a {
   margin-bottom: 10px;
 }
 
-/* ===== Contador de quantidade ===== */
-
+/* ===========================
+   Contador de Quantidade
+=========================== */
 .quantidade {
   display: flex;
   justify-content: center;
@@ -217,8 +214,9 @@ nav ul li a {
   color: #a64d79;
 }
 
-/* ===== Botão adicionar carrinho ===== */
-
+/* ===========================
+   Botão Adicionar ao Carrinho
+=========================== */
 .btn-fofo {
   display: inline-block;
   background-color: #a64d79;
@@ -238,15 +236,17 @@ nav ul li a {
   transform: scale(1.04);
 }
 
-/* ===== Hover do card ===== */
-
+/* ===========================
+   Hover do Card
+=========================== */
 .item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(255, 102, 178, 0.35);
 }
 
-/* ===== Rodapé ===== */
-
+/* ===========================
+   Rodapé
+=========================== */
 footer {
   background-color: #ffcce0;
   text-align: center;
@@ -271,24 +271,24 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ===== Animação ===== */
-
+/* ===========================
+   Animação
+=========================== */
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* ===== Responsividade ===== */
-
+/* ===========================
+   Responsividade
+=========================== */
 @media (max-width: 768px) {
-
   .grid-cardapio {
     grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
     gap: 20px;
@@ -302,11 +302,9 @@ footer a:hover {
   .btn-fofo {
     font-size: 0.95em;
   }
-
 }
 
 @media (max-width: 480px) {
-
   .item h4 {
     font-size: 1em;
   }
@@ -322,5 +320,4 @@ footer a:hover {
   .btn-fofo {
     font-size: 0.9em;
   }
-
 }
