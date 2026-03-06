@@ -1,3 +1,4 @@
+/* ===== Estilo geral para login/cadastro ===== */
 body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   background-color: #fff0f6;
@@ -14,7 +15,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.2em;
+  font-size: 2.5em;
   color: #a64d79;
 }
 
@@ -34,38 +35,89 @@ nav ul li a {
   font-weight: bold;
 }
 
+/* ===== Container de login/cadastro ===== */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
 .login-container {
-  max-width: 400px;
-  margin: 50px auto;
-  background-color: #ffe6f2;
+  background: #ffe6f2;
   padding: 30px;
   border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(255, 102, 178, 0.2);
+  box-shadow: 0 3px 6px rgba(255, 153, 204, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 1.5s ease;
 }
 
 .login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
   color: #a64d79;
-  margin-bottom: 15px;
 }
 
+/* ===== Formulário ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #5c3d57;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff99cc;
+  border-radius: 8px;
+  background-color: #fff0f6;
+  color: #5c3d57;
+}
+
+/* ===== Botões ===== */
 .btn-fofo {
-  background-color: #ff99cc;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  color: white;
-  font-size: 1em;
+  background-color: #ffcce0;
+  color: #5c3d57;
+  border: 2px solid #ff99cc;
+  padding: 12px;
+  border-radius: 8px;
   cursor: pointer;
-  margin: 10px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .btn-fofo:hover {
-  transform: scale(1.1);
-  background-color: #ff66b2;
+  background-color: #ff99cc;
+  color: white;
 }
 
+/* Espaçamento entre botões */
+form .btn-fofo {
+  margin-top: 10px;
+}
+
+.login-container p {
+  text-align: center;
+  margin: 20px 0 10px;
+  color: #5c3d57;
+}
+
+/* ===== Rodapé ===== */
 footer {
   background-color: #ffcce0;
   text-align: center;
@@ -88,4 +140,16 @@ footer a {
 footer a:hover {
   color: #ff66b2;
   text-decoration: underline;
+}
+
+/* ===== Animação ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
