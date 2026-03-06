@@ -4,14 +4,15 @@ import { getAuth, createUserWithEmailAndPassword }
 
 document.addEventListener("DOMContentLoaded", () => {
   const firebaseConfig = {
-    apiKey: "AlTzaSyAvffw23q6XvrWUlChp76rrTytjgMXpL3VE",
-    authDomain: "doceria-encantada.firebaseapp.com",
-    projectId: "doceria-encantada",
-    storageBucket: "doceria-encantada.appspot.com",
-    messagingSenderId: "588485252022",
-    appId: "1:588485252022:web:304910a55cb2b71ed9f0bb",
-    measurementId: "G-K15XINXBE9"
-  };
+  apiKey: "AIzaSyAfw23gK7vWu1hCp76r7ytg1MpXL9ev",
+  authDomain: "doceria-encantada.firebaseapp.com",
+  projectId: "doceria-encantada",
+  storageBucket: "doceria-encantada.appspot.com",
+  messagingSenderId: "588458252002",
+  appId: "1:588458252002:web:304910a55cb2b71ed9f0bb",
+  measurementId: "G-K15ZXNXBE9"
+};
+
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
