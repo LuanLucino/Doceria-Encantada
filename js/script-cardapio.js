@@ -75,18 +75,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===== Menu mobile ===== */
 
-  const btnFiltro = document.getElementById("btn-filtro");
-  const menuFiltro = document.getElementById("menu-filtro");
 
-  btnFiltro.addEventListener("click", () => {
+const btnFiltro = document.getElementById("btn-filtro");
+const menuFiltro = document.querySelector(".menu-filtro");
 
-    if (menuFiltro.style.display === "flex") {
-      menuFiltro.style.display = "none";
-    } else {
-      menuFiltro.style.display = "flex";
-    }
+btnFiltro.addEventListener("click", () => {
 
-  });
+  if(menuFiltro.style.display === "flex"){
+    menuFiltro.style.display = "none";
+  }else{
+    menuFiltro.style.display = "flex";
+  }
+
+});
+
 
 
   const botoesMobile = document.querySelectorAll("#menu-filtro button");
