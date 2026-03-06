@@ -16,13 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
     carrinho.forEach((item, index) => {
       soma += item.preco * item.quantidade;
       lista.innerHTML += `
-        <div class="carrinho-item">
-          <span>${item.nome}</span>
-          <span>Qtd: ${item.quantidade}</span>
-          <span>R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
-          <button onclick="alterarQuantidade(${index}, -1)">-</button>
-          <button onclick="alterarQuantidade(${index}, 1)">+</button>
-          <button onclick="removerItem(${index})">Remover</button>
+        <div class="item-carrinho">
+          <h4>${item.nome}</h4>
+          <p>Qtd: ${item.quantidade} | R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+          <div class="quantidade">
+            <button class="btn-menos" onclick="alterarQuantidade(${index}, -1)">-</button>
+            <span>${item.quantidade}</span>
+            <button class="btn-mais" onclick="alterarQuantidade(${index}, 1)">+</button>
+          </div>
+          <button class="btn-remover" onclick="removerItem(${index})">Remover</button>
         </div>
       `;
     });
