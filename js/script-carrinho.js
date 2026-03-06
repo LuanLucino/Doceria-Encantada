@@ -67,3 +67,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCarrinho();
 });
+
+// Função para adicionar item ao carrinho com feedback visual
+function adicionarCarrinho(botao, nome, preco) {
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+  // Verifica se item já existe
+  const existente = carrinho.find(item => item.nome === nome);
+  if (existente) {
+    existente.quantidade += 1;
+  } else {
+    carrinho.push({ nome, preco, quantidade: 1 });
+  }
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+  // Feedback visual no botão
+  botao.textContent = "✔ Adicionado!";
+  botao.disabled = true;
+
+  setTimeout(() => {
+    botao.textContent = "Adicionar ao Carrinho";
+    botao.disabled = false;
+  }, 2000);
+}

@@ -17,6 +17,7 @@
         <li><a href="contato.html">Contato</a></li>
         <li><a href="carrinho.html">Carrinho 🛒</a></li>
         <li><a href="login.html">Login 🔑</a></li>
+        <li><a href="signup.html">Cadastrar ✨</a></li>
       </ul>
     </nav>
   </header>
@@ -24,10 +25,19 @@
   <main>
     <section class="login-container">
       <h2>Área de Login</h2>
-      <p>Escolha uma forma de entrar:</p>
+
+      <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" required minlength="6">
+
+        <button type="submit" class="btn-fofo">Login com Email</button>
+      </form>
+
+      <p>Ou entre com:</p>
       <button id="btnGoogle" class="btn-fofo">Login com Google</button>
-      <button id="btnEmail" class="btn-fofo">Login com Email</button>
-      <button id="btnSignup" class="btn-fofo">Cadastrar</button>
     </section>
   </main>
 
@@ -36,9 +46,6 @@
     <p>Desenvolvido por <a href="https://luanlucino.github.io/Portfolio/" target="_blank">Luan Lucino</a></p>
   </footer>
 
-  <!-- JS separado como módulo -->
   <script type="module" src="js/login.js"></script>
-  <script type="module" src="js/signup.js"></script>
-
 </body>
 </html>

@@ -1,4 +1,3 @@
-// Importando funções do Firebase (modular v9)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } 
   from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
@@ -20,18 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signupForm");
   if (signupForm) {
     signupForm.addEventListener("submit", (e) => {
-      e.preventDefault(); // evita recarregar a página
+      e.preventDefault();
       const email = document.getElementById("email").value;
       const senha = document.getElementById("senha").value;
 
       createUserWithEmailAndPassword(auth, email, senha)
         .then(result => {
-          alert("Usuário criado com sucesso: " + result.user.email);
-          // Redireciona para login.html
-          window.location.href = "login.html";
+          // Redireciona para login.html com mensagem
+          window.location.href = "login.html?signup=success";
         })
         .catch(error => {
-          console.error("Erro no cadastro:", error);
           alert("Erro no cadastro: " + error.message);
         });
     });
