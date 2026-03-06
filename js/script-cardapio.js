@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Controle dos botões de quantidade
+
+  /* =========================
+     CONTROLE DE QUANTIDADE
+  ========================= */
+
   const itens = document.querySelectorAll(".item");
 
   itens.forEach(item => {
+
     const btnMais = item.querySelector(".btn-mais");
     const btnMenos = item.querySelector(".btn-menos");
     const valorSpan = item.querySelector(".valor");
@@ -18,19 +23,104 @@ document.addEventListener("DOMContentLoaded", () => {
         valorSpan.textContent = valor - 1;
       }
     });
+
   });
+
+
+  /* =========================
+     FILTRO DE CATEGORIA
+  ========================= */
+
+  const botoesFiltro = document.querySelectorAll("[data-categoria]");
+  const itensCardapio = document.querySelectorAll(".item");
+
+  function filtrarCategoria(categoria) {
+
+    itensCardapio.forEach(item => {
+
+      if (categoria === "todos") {
+        item.style.display = "block";
+      } 
+      else if (item.dataset.categoria === categoria) {
+        item.style.display = "block";
+      } 
+      else {
+        item.style.display = "none";
+      }
+
+    });
+
+  }
+
+
+  /* ===== Abas desktop ===== */
+
+  const abas = document.querySelectorAll(".aba");
+
+  abas.forEach(aba => {
+
+    aba.addEventListener("click", () => {
+
+      const categoria = aba.dataset.categoria;
+
+      abas.forEach(a => a.classList.remove("ativa"));
+      aba.classList.add("ativa");
+
+      filtrarCategoria(categoria);
+
+    });
+
+  });
+
+
+  /* ===== Menu mobile ===== */
+
+  const btnFiltro = document.getElementById("btn-filtro");
+  const menuFiltro = document.getElementById("menu-filtro");
+
+  btnFiltro.addEventListener("click", () => {
+
+    if (menuFiltro.style.display === "flex") {
+      menuFiltro.style.display = "none";
+    } else {
+      menuFiltro.style.display = "flex";
+    }
+
+  });
+
+
+  const botoesMobile = document.querySelectorAll("#menu-filtro button");
+
+  botoesMobile.forEach(botao => {
+
+    botao.addEventListener("click", () => {
+
+      const categoria = botao.dataset.categoria;
+
+      filtrarCategoria(categoria);
+
+      menuFiltro.style.display = "none";
+
+    });
+
+  });
+
 });
 
-// Função para adicionar ao carrinho
+
+/* =========================
+   CARRINHO
+========================= */
+
 function adicionarCarrinho(botao, nome, preco) {
+
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-  // Pega a quantidade escolhida no item
   const itemDiv = botao.closest(".item");
   const quantidade = parseInt(itemDiv.querySelector(".valor").textContent);
 
-  // Verifica se item já existe
   const existente = carrinho.find(item => item.nome === nome);
+
   if (existente) {
     existente.quantidade += quantidade;
   } else {
@@ -39,7 +129,6 @@ function adicionarCarrinho(botao, nome, preco) {
 
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-  // Feedback visual no botão
   botao.textContent = "✔ Adicionado!";
   botao.disabled = true;
 
@@ -47,4 +136,5 @@ function adicionarCarrinho(botao, nome, preco) {
     botao.textContent = "Adicionar ao Carrinho";
     botao.disabled = false;
   }, 2000);
+
 }

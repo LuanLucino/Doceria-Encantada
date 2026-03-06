@@ -36,6 +36,7 @@ nav ul li a {
 }
 
 /* ===== Cardápio ===== */
+
 .cardapio {
   padding: 40px;
   text-align: center;
@@ -48,6 +49,7 @@ nav ul li a {
 }
 
 /* ===== Container centralizado ===== */
+
 .conteudo-cardapio {
   max-width: 1200px;
   margin: 0 auto;
@@ -55,6 +57,7 @@ nav ul li a {
 }
 
 /* ===== Abas ===== */
+
 .abas {
   display: flex;
   justify-content: center;
@@ -84,6 +87,7 @@ nav ul li a {
 }
 
 /* ===== Filtro Mobile ===== */
+
 .filtro-mobile {
   display: none;
   text-align: center;
@@ -123,40 +127,35 @@ nav ul li a {
   color: white;
 }
 
-/* ===== Categorias ===== */
-.categoria {
-  display: none;
-}
+/* ===== GRID RESPONSIVO DO CARDÁPIO ===== */
 
-.categoria.ativa {
-  display: block;
-  animation: fadeIn 1s ease;
-}
-
-.categoria h3 {
-  color: #a64d79;
-  margin-bottom: 20px;
-  font-size: 1.8em;
-}
-
-/* ===== Grid de itens ===== */
 .grid-cardapio {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* sempre 4 por linha */
-  gap: 20px;
-  justify-items: center; /* centraliza os itens */
+
+  /* largura fixa dos cards */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+
+  /* espaçamento entre os cards */
+  gap: 60px;
+
+  /* centralização */
+  justify-content: center;
+
+  margin-top: 20px;
 }
 
 /* ===== Item do cardápio ===== */
+
 .item {
   background-color: #fff0f6;
   border: 2px solid #ff99cc;
   border-radius: 15px;
   padding: 20px;
   text-align: center;
-  width: 100%;
-  max-width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  width: 240px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .item h4 {
@@ -177,6 +176,7 @@ nav ul li a {
 }
 
 /* ===== Contador de quantidade ===== */
+
 .quantidade {
   display: flex;
   justify-content: center;
@@ -207,7 +207,8 @@ nav ul li a {
   color: #a64d79;
 }
 
-/* ===== Botão de adicionar ao carrinho ===== */
+/* ===== Botão adicionar carrinho ===== */
+
 .btn-fofo {
   display: inline-block;
   background-color: #a64d79;
@@ -217,23 +218,25 @@ nav ul li a {
   border: none;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   width: 100%;
   margin-top: 10px;
 }
 
 .btn-fofo:hover {
   background-color: #ff66b2;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-/* ===== Hover no item ===== */
+/* ===== Hover do card ===== */
+
 .item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(255, 102, 178, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(255, 102, 178, 0.35);
 }
 
 /* ===== Rodapé ===== */
+
 footer {
   background-color: #ffcce0;
   text-align: center;
@@ -258,12 +261,14 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ===== Animações ===== */
+/* ===== Animação ===== */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -271,24 +276,26 @@ footer a:hover {
 }
 
 /* ===== Responsividade ===== */
+
 @media (max-width: 768px) {
+
   .grid-cardapio {
-    grid-template-columns: repeat(2, 1fr); /* 2 por linha no tablet */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    gap: 20px;
   }
 
   .item {
+    width: 200px;
     padding: 15px;
   }
 
   .btn-fofo {
     font-size: 0.95em;
   }
+
 }
 
 @media (max-width: 480px) {
-  .grid-cardapio {
-    grid-template-columns: 1fr; /* 1 por linha no celular */
-  }
 
   .item h4 {
     font-size: 1em;
@@ -305,4 +312,5 @@ footer a:hover {
   .btn-fofo {
     font-size: 0.9em;
   }
+
 }
