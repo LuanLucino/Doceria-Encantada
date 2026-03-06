@@ -1,3 +1,4 @@
+/* ===== Estilo geral ===== */
 body {
   font-family: 'Comic Sans MS', cursive, sans-serif;
   background-color: #ffe6f2;
@@ -14,7 +15,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 2.2em;
+  font-size: 2.5em;
   color: #a64d79;
 }
 
@@ -35,85 +36,113 @@ nav ul li a {
 }
 
 /* ===== Container do carrinho ===== */
-.carrinho {
+.login-container {
   max-width: 800px;
   margin: 40px auto;
-  background: #fff0f6;
-  padding: 20px;
+  padding: 30px;
+  background-color: #fff0f6;
+  border: 2px solid #ff99cc;
   border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(255, 153, 204, 0.2);
 }
 
-.carrinho h2 {
+.login-container h2 {
   color: #a64d79;
   margin-bottom: 20px;
 }
 
-/* ===== Item do carrinho ===== */
-.carrinho-item {
+/* ===== Lista de itens ===== */
+#lista-carrinho {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.item-carrinho {
+  background-color: #ffcce0;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  color: #5c3d57;
+  box-shadow: 0 3px 6px rgba(255, 102, 178, 0.2);
+}
+
+.item-carrinho h4 {
+  margin: 0 0 10px;
+  color: #a64d79;
+}
+
+.item-carrinho p {
+  margin: 5px 0;
+}
+
+/* ===== Botões de quantidade ===== */
+.item-carrinho .quantidade {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
-  background: #ffe6f2;
-  padding: 10px;
-  border-radius: 10px;
+  gap: 10px;
+  margin: 10px 0;
 }
 
-.carrinho-item span {
-  flex: 1;
-}
-
-/* ===== Botões de ação ===== */
-.carrinho-item button {
-  margin-left: 8px;
-  border: none;
+.item-carrinho .quantidade button {
+  background-color: #ffcce0;
+  border: 2px solid #ff99cc;
   padding: 6px 12px;
   border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-/* Botão "-" */
-.carrinho-item button:first-of-type {
-  background-color: #a64d79;
-}
-
-/* Botão "+" */
-.carrinho-item button:nth-of-type(2) {
-  background-color: #ff66b2;
-}
-
-/* Botão remover */
-.carrinho-item button:nth-of-type(3) {
-  background-color: #ff99cc;
-}
-
-.carrinho-item button:hover {
-  opacity: 0.85;
-}
-
-/* ===== Total ===== */
-.carrinho-total {
+  color: #5c3d57;
   font-weight: bold;
-  margin-top: 20px;
-  text-align: right;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* ===== Finalizar ===== */
-.btn-finalizar {
-  display: block;
-  margin: 20px auto 0;
+.item-carrinho .quantidade button:hover {
+  background-color: #ff99cc;
+  color: white;
+}
+
+/* ===== Botão remover ===== */
+.btn-remover {
   background-color: #a64d79;
   color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
   border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-finalizar:hover {
+.btn-remover:hover {
+  background-color: #ff66b2;
+  transform: scale(1.05);
+}
+
+/* ===== Total ===== */
+#total {
+  font-weight: bold;
+  color: #a64d79;
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+/* ===== Botão finalizar ===== */
+.btn-fofo {
+  display: inline-block;
+  background-color: #a64d79;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+.btn-fofo:hover {
   background-color: #ff66b2;
   transform: scale(1.05);
 }
@@ -141,4 +170,19 @@ footer a {
 footer a:hover {
   color: #ff66b2;
   text-decoration: underline;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .item-carrinho {
+    font-size: 0.9em;
+  }
+
+  .btn-fofo {
+    font-size: 0.95em;
+  }
 }

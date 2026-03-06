@@ -142,8 +142,9 @@ nav ul li a {
 /* ===== Grid de itens ===== */
 .grid-cardapio {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* sempre 4 por linha */
   gap: 20px;
+  justify-items: center; /* centraliza os itens */
 }
 
 /* ===== Item do cardápio ===== */
@@ -153,6 +154,8 @@ nav ul li a {
   border-radius: 15px;
   padding: 20px;
   text-align: center;
+  width: 100%;
+  max-width: 250px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -179,41 +182,47 @@ nav ul li a {
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  gap: 10px;
 }
 
 .quantidade button {
-  background-color: #ff99cc;
-  border: none;
+  background-color: #ffcce0;
+  border: 2px solid #ff99cc;
   padding: 6px 12px;
   border-radius: 10px;
-  color: white;
+  color: #5c3d57;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .quantidade button:hover {
-  background-color: #ff66b2;
+  background-color: #ff99cc;
+  color: white;
 }
 
 .quantidade .valor {
   margin: 0 10px;
   font-weight: bold;
-  color: #5c3d57;
+  color: #a64d79;
 }
 
 /* ===== Botão de adicionar ao carrinho ===== */
-.btn-carrinho {
+.btn-fofo {
   display: inline-block;
   background-color: #a64d79;
   color: white;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.btn-carrinho:hover {
+.btn-fofo:hover {
   background-color: #ff66b2;
   transform: scale(1.05);
 }
@@ -263,76 +272,22 @@ footer a:hover {
 
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
-  }
-
-  nav ul li {
-    margin: 0 8px;
-  }
-
-  .cardapio {
-    padding: 20px;
-  }
-
-  .cardapio h2 {
-    font-size: 1.6em;
-  }
-
-  .abas {
-    display: none;
-  }
-  .filtro-mobile {
-    display: block;
-  }
-
   .grid-cardapio {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 por linha no tablet */
   }
 
   .item {
     padding: 15px;
   }
 
-  .item h4 {
-    font-size: 1.1em;
-  }
-
-  .item p {
-    font-size: 0.9em;
-  }
-
-  .preco {
-    font-size: 1em;
-  }
-
-  .btn-carrinho {
-    margin: 0 auto;
-    display: block;
-    width: auto;
-    padding: 10px 20px;
+  .btn-fofo {
     font-size: 0.95em;
-  }
-
-  footer {
-    font-size: 0.9em;
-    padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 1.8em;
-  }
-
-  #btn-filtro {
-    font-size: 0.9em;
-    padding: 8px 15px;
-  }
-
-  .menu-filtro button {
-    font-size: 0.85em;
-    padding: 8px;
+  .grid-cardapio {
+    grid-template-columns: 1fr; /* 1 por linha no celular */
   }
 
   .item h4 {
@@ -347,7 +302,7 @@ footer a:hover {
     font-size: 0.9em;
   }
 
-  .btn-carrinho {
+  .btn-fofo {
     font-size: 0.9em;
   }
 }
