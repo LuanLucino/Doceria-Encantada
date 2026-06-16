@@ -1,0 +1,231 @@
+/* ── Cardápio Page ── */
+.cardapio {
+  padding: 60px 40px;
+}
+
+.cardapio > .section-header {
+  margin-bottom: 36px;
+}
+
+/* ── Abas de Filtro ── */
+.abas {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.aba {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  padding: 9px 22px;
+  border-radius: var(--radius-lg);
+  color: var(--text-mid);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.aba:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.aba.ativa {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+/* ── Filtro Mobile ── */
+.filtro-mobile {
+  display: none;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#btn-filtro {
+  background: var(--dark);
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  padding: 11px 24px;
+  border-radius: var(--radius-lg);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+#btn-filtro:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.menu-filtro {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-filtro .aba {
+  width: 100%;
+}
+
+/* ── Grid do Cardápio ── */
+.conteudo-cardapio {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-cardapio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 240px));
+  gap: 28px;
+  justify-content: center;
+}
+
+/* ── Card de Produto ── */
+.item {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 2px 12px var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px var(--shadow);
+  border-color: var(--gold);
+}
+
+.item h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05em;
+  color: var(--text);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.item p {
+  font-size: 0.9em;
+  color: var(--text-mid);
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.preco {
+  display: block;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 1.1em;
+  margin-bottom: 14px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ── Contador de Quantidade ── */
+.quantidade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.quantidade button {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantidade button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+.quantidade .valor {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1em;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ── Botão Adicionar ── */
+.btn-fofo {
+  display: inline-block;
+  width: 100%;
+  background-color: var(--dark);
+  color: var(--gold);
+  padding: 11px 20px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--gold);
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.82em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  margin-top: 6px;
+}
+
+.btn-fofo:hover {
+  background-color: var(--gold);
+  color: var(--dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.btn-fofo:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cardapio { padding: 40px 20px; }
+  .abas { display: none; }
+  .filtro-mobile { display: block; }
+
+  .grid-cardapio {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+    gap: 18px;
+  }
+
+  .item { padding: 18px 16px; }
+}
+
+@media (max-width: 480px) {
+  .grid-cardapio {
+    grid-template-columns: 1fr;
+  }
+
+  .item { width: 100%; max-width: 320px; margin: 0 auto; }
+}

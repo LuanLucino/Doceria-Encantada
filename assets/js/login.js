@@ -1,10 +1,18 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } 
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword }
   from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Mobile nav toggle
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => nav.classList.toggle("open"));
+  }
+
   const firebaseConfig = {
-    apiKey: "AlTzaSyAvffw23q6XvrWUlChp76rrTytjgMXpL3VE",
+    apiKey: "AIzaSyAvffw23q6XvrWUlChp76rrTytjgMXpL3VE",
     authDomain: "doceria-encantada.firebaseapp.com",
     projectId: "doceria-encantada",
     storageBucket: "doceria-encantada.appspot.com",
@@ -13,46 +21,40 @@ document.addEventListener("DOMContentLoaded", () => {
     measurementId: "G-K15XINXBE9"
   };
 
-  const app = initializeApp(firebaseConfig);
+  const app  = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  // Mensagem de sucesso após cadastro
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("signup") === "success") {
+  // Mensagem pós-cadastro
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("signup") === "success") {
     alert("Cadastro realizado com sucesso! Faça login agora.");
   }
 
   // Login com Google
-  const providerGoogle = new GoogleAuthProvider();
   const btnGoogle = document.getElementById("btnGoogle");
   if (btnGoogle) {
     btnGoogle.addEventListener("click", () => {
-      signInWithPopup(auth, providerGoogle)
-        .then(result => {
-          alert("Logado como: " + result.user.displayName);
-        })
-        .catch(error => {
-          alert("Erro no login Google: " + error.message);
-        });
+      signInWithPopup(auth, new GoogleAuthProvider())
+        .then(r => alert("Bem-vindo, " + r.user.displayName + "!"))
+        .catch(e => alert("Erro: " + e.message));
     });
   }
 
-  // Login com Email/Senha via formulário
+  // Login com e-mail
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", e => {
       e.preventDefault();
       const email = document.getElementById("email").value;
       const senha = document.getElementById("senha").value;
 
       signInWithEmailAndPassword(auth, email, senha)
-        .then(result => {
-          alert("Logado como: " + result.user.email);
+        .then(r => {
+          alert("Bem-vindo, " + r.user.email + "!");
           loginForm.reset();
         })
-        .catch(error => {
-          alert("Erro no login Email: " + error.message);
-        });
+        .catch(e => alert("Erro no login: " + e.message));
     });
   }
+
 });

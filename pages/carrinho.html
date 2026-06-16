@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho — Doceria Encantada</title>
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/carrinho.css">
+</head>
+<body>
+
+  <header>
+    <h1>Doceria Encantada</h1>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="carrinho.html" class="ativo">Carrinho</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="carrinho-wrapper">
+      <h2>Seu Carrinho</h2>
+      <div class="divider"></div>
+
+      <div id="lista-carrinho"></div>
+
+      <div class="carrinho-resumo">
+        <span class="total-label">Total do pedido</span>
+        <span id="total">R$ 0,00</span>
+        <button id="finalizar">Finalizar via WhatsApp</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Doceria Encantada — Feito com carinho</p>
+    <p>Desenvolvido por <a href="https://luanlucino.github.io/Portfolio/" target="_blank">Luan Lucino</a></p>
+  </footer>
+
+  <script src="../assets/js/carrinho.js"></script>
+</body>
+</html>

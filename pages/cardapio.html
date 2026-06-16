@@ -3,37 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doceria Encantada - Cardápio</title>
-
-  <!-- Estilos e ícone -->
-  <link rel="stylesheet" href="css/style-cardapio.css">
-  <link rel="icon" type="image/png" href="img/favicon.ico">
+  <title>Cardápio — Doceria Encantada</title>
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/cardapio.css">
 </head>
-
 <body>
 
-  <!-- Cabeçalho -->
   <header>
-    <h1>🍩 Doceria Encantada 🍰</h1>
+    <h1>Doceria Encantada</h1>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
     <nav>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="cardapio.html" class="ativo">Cardápio</a></li>
         <li><a href="contato.html">Contato</a></li>
-        <li><a href="carrinho.html">Carrinho 🛒</a></li>
-        <li><a href="login.html">Login 🔑</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Conteúdo principal -->
   <main>
     <section class="cardapio">
-      <h2>Nosso Cardápio</h2>
+
+      <div class="section-header">
+        <h2>Nosso Cardápio</h2>
+        <div class="divider"></div>
+        <p>Escolha seu favorito e adicione ao carrinho</p>
+      </div>
 
       <!-- Filtro Mobile -->
       <div class="filtro-mobile">
-        <button id="btn-filtro">☰ Filtros</button>
+        <button id="btn-filtro">&#9776; Filtrar por categoria</button>
         <div class="menu-filtro">
           <button class="aba ativa" data-categoria="todos">Todos</button>
           <button class="aba" data-categoria="cupcakes">Cupcakes</button>
@@ -52,7 +56,6 @@
         <button class="aba" data-categoria="bebidas">Bebidas</button>
       </div>
 
-      <!-- Grid do Cardápio -->
       <div class="conteudo-cardapio">
         <div class="grid-cardapio">
 
@@ -62,7 +65,7 @@
             <p>Massa fofinha com chantilly e morangos frescos.</p>
             <span class="preco">R$ 8,00</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -76,7 +79,7 @@
             <p>Recheado com brigadeiro e cobertura cremosa.</p>
             <span class="preco">R$ 9,00</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -91,7 +94,7 @@
             <p>Feito com chocolate belga, derrete na boca.</p>
             <span class="preco">R$ 3,50</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -102,10 +105,10 @@
 
           <div class="item" data-categoria="doces">
             <h4>Mini Churros</h4>
-            <p>Recheados com doce de leite e polvilhados com açúcar e canela.</p>
+            <p>Recheados com doce de leite, polvilhados com açúcar e canela.</p>
             <span class="preco">R$ 5,00</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -120,7 +123,7 @@
             <p>Base crocante, recheio cremoso e cobertura de merengue.</p>
             <span class="preco">R$ 25,00</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -134,7 +137,7 @@
             <p>Clássica, com maçãs caramelizadas e toque de canela.</p>
             <span class="preco">R$ 28,00</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -149,7 +152,7 @@
             <p>Cremoso e quentinho, perfeito para acompanhar os doces.</p>
             <span class="preco">R$ 10,00</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -163,7 +166,7 @@
             <p>Refrescante e doce, feito com sorvete artesanal.</p>
             <span class="preco">R$ 12,00</span>
             <div class="quantidade">
-              <button class="btn-menos">-</button>
+              <button class="btn-menos">−</button>
               <span class="valor">1</span>
               <button class="btn-mais">+</button>
             </div>
@@ -177,19 +180,11 @@
     </section>
   </main>
 
-  <!-- Rodapé -->
   <footer>
-    <p>© 2026 Doceria Encantada - Feito com amor 💕</p>
-    <p>
-      Desenvolvido por
-      <a href="https://luanlucino.github.io/Portfolio/" target="_blank">
-        Luan Lucino
-      </a>
-    </p>
+    <p>© 2026 Doceria Encantada — Feito com carinho</p>
+    <p>Desenvolvido por <a href="https://luanlucino.github.io/Portfolio/" target="_blank">Luan Lucino</a></p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/script-cardapio.js"></script>
-
+  <script src="../assets/js/cardapio.js"></script>
 </body>
 </html>

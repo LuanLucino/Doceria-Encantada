@@ -1,0 +1,111 @@
+/* ── Contato Page ── */
+main {
+  padding: 72px 24px;
+}
+
+.contato-wrapper {
+  max-width: 540px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contato-wrapper .section-header p {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* ── Info extra ── */
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+}
+
+.contato-info p {
+  color: var(--text-mid);
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contato-info strong {
+  color: var(--text);
+  font-weight: 700;
+  min-width: 60px;
+}
+
+/* ── Links de Contato ── */
+.contato-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius-lg);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background-color: #25d366;
+  color: #fff;
+  border: none;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius-lg);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+  border: none;
+}
+
+.btn-instagram:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(131, 58, 180, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  main { padding: 48px 16px; }
+
+  .contato-links { flex-direction: column; align-items: center; }
+
+  .btn-whatsapp,
+  .btn-instagram {
+    width: 100%;
+    justify-content: center;
+  }
+}
