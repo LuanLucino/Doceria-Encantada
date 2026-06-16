@@ -1,42 +1,57 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword }
+import { auth } from "./auth.js";
+import { createUserWithEmailAndPassword, updateProfile }
   from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Mobile nav toggle
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector("nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => nav.classList.toggle("open"));
-  }
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyAvffw23qX6rWU1cHp76rrTytgjMXpl3VE",
-    authDomain: "doceria-encantada.firebaseapp.com",
-    projectId: "doceria-encantada",
-    storageBucket: "doceria-encantada.firebasestorage.app",
-    messagingSenderId: "588458252002",
-    appId: "1:588458252002:web:304910a55cb2b71ed9f0bb",
-    measurementId: "G-K15XZNXBE9"
-  };
-
-  const app  = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
   const signupForm = document.getElementById("signupForm");
-  if (signupForm) {
-    signupForm.addEventListener("submit", e => {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const senha = document.getElementById("senha").value;
+  if (!signupForm) return;
 
-      createUserWithEmailAndPassword(auth, email, senha)
-        .then(() => {
-          window.location.href = "login.html?signup=success";
-        })
-        .catch(e => alert("Erro no cadastro: " + e.message));
-    });
-  }
+  signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const nome  = document.getElementById("nome")?.value?.trim() || "";
+    const btn   = signupForm.querySelector("button[type='submit']");
+
+    btn.disabled    = true;
+    btn.textContent = "Criando conta...";
+
+    try {
+      const result = await createUserWithEmailAndPassword(auth, email, senha);
+
+      // Salva nome de exibição se preenchido
+      if (nome) {
+        await updateProfile(result.user, { displayName: nome });
+      }
+
+      window.location.href = "login.html?signup=success";
+    } catch (err) {
+      showMsg(traduzirErro(err.code), "error");
+      btn.disabled    = false;
+      btn.textContent = "Criar conta";
+    }
+  });
 
 });
+
+function showMsg(text, type) {
+  let el = document.getElementById("signup-msg");
+  if (!el) {
+    el = document.createElement("p");
+    el.id = "signup-msg";
+    el.style.cssText = "text-align:center; font-size:.88em; margin-top:12px;";
+    document.querySelector(".login-container")?.appendChild(el);
+  }
+  el.style.color = type === "success" ? "var(--gold)" : "var(--pink-dark)";
+  el.textContent = text;
+}
+
+function traduzirErro(code) {
+  const erros = {
+    "auth/email-already-in-use": "Este e-mail já está cadastrado.",
+    "auth/invalid-email":        "E-mail inválido.",
+    "auth/weak-password":        "Senha fraca. Use pelo menos 6 caracteres.",
+  };
+  return erros[code] || "Erro ao criar conta. Tente novamente.";
+}

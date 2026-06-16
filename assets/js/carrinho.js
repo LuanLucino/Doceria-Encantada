@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mobile nav toggle
   const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector("nav");
+  const nav    = document.querySelector("nav");
   if (toggle && nav) {
     toggle.addEventListener("click", () => nav.classList.toggle("open"));
   }
@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="acoes">
             <div class="quantidade">
-              <button onclick="alterarQuantidade(${index}, -1)">−</button>
+              <button onclick="alterarQuantidade(${index}, -1)">&#8722;</button>
               <span class="valor">${item.quantidade}</span>
               <button onclick="alterarQuantidade(${index}, 1)">+</button>
             </div>
             <span class="preco-item">R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
-            <button class="btn-remover" onclick="removerItem(${index})" title="Remover">×</button>
+            <button class="btn-remover" onclick="removerItem(${index})" title="Remover">&#215;</button>
           </div>
         </div>
       `;
@@ -73,7 +73,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     msg += `\nTotal: R$ ${soma.toFixed(2)}`;
 
-    window.open(`https://wa.me/5534996998882?text=${encodeURIComponent(msg)}`, "_blank");
+    // ── Salvar no histórico (se usuário logado) ────────────────────
+    const userId = localStorage.getItem("currentUserId");
+    if (userId) {
+      const histKey = `orderHistory_${userId}`;
+      const history = JSON.parse(localStorage.getItem(histKey)) || [];
+      history.unshift({
+        id:    Date.now(),
+        date:  new Date().toLocaleString("pt-BR"),
+        itens: JSON.parse(JSON.stringify(carrinho)),
+        total: soma.toFixed(2)
+      });
+      localStorage.setItem(histKey, JSON.stringify(history));
+    }
+
+    window.open(
+      `https://wa.me/5534996998882?text=${encodeURIComponent(msg)}`,
+      "_blank"
+    );
   });
 
   renderCarrinho();
